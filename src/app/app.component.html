@@ -1,0 +1,86 @@
+<header class="navbar navbar-default flex-column flex-md-row" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+            <span class="glyphicon glyphicon-search">  </span>
+            &nbsp;  &nbsp; Dispatch - Historique d'ordre
+        </a>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">Log in</a></li>
+        </ul>
+
+    </div>
+  </div>
+</header>
+
+
+<div class="container">
+                <h4 class="heading"><strong>Eureka </strong> Technology <span></span></h4>
+                  <div class="form">
+                      <div class="row">
+                        <div class="col-md-3" id="NumOm">
+                            <input type = "text" required="" placeholder="Numéro de mission" value="" (keyup)="onNameKeyup($event)" class="txt">
+                        </div>
+
+                        <div class="col-md-3" id="CompNum">
+                        <input type = "text"  required=" " placeholder="1" value="" (keyup)="onNameKeyup2($event)" class="txt">
+                        </div>
+                      </div>
+
+                    <div class="row">
+                      <div class="col-xs-3">
+                        <button type="submit" class="btn btn-default btn-md search-btn" (click)=getOrder()>
+                          <span class="glyphicon glyphicon-search"></span>
+                          Rechercher</button>
+                        </div>
+                    </div>
+                  </div>
+
+    <br>
+    <br>
+
+<div class="container">
+          <ul class="list-group-flush">
+                    <li class="list-group-item active" id ="activeList">
+                         <div class="col-xs-1">
+                           Date Modification
+                         </div>
+
+                         <div class="col-xs-1">
+                           Utilisateur
+                         </div>
+
+                          <div class="col-xs-3">
+                           Propriété
+                          </div>
+                          <div class="col-xs-3">
+                            Ancienne Valeur
+                          </div>
+                          <div class="col-xs-3">
+                            Nouvelle Valeur
+                          </div>
+                    </li>
+
+                    <li class="list-group-item"  *ngFor="let diff of diffs" >
+                      <div class="col-xs-1">
+                       {{diff.modificationDate}}
+                      </div>
+                      <div class="col-xs-1">
+                        {{diff.user}}
+                      </div>
+                      <div class="col-xs-3">
+                        {{diff.property}}
+                      </div>
+                      <div class="col-xs-3">
+                        {{diff.oldValue}}
+                      </div>
+                      <div class="col-xs-3">
+                        {{diff.newValue}}
+                      </div>
+                    </li>
+            </ul>
+
+</div>
+
+</div>
